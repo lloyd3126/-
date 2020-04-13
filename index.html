@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - 動物森友會互換小工具</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="app">
+  <nav class="navbar navbar-light bg-light d-flex justify-content-center"><span class="navbar-brand mb-0 h1">動物森友會互換小工具</span></nav>
+  <div class="container">
+    <div class="alert alert-secondary" role="alert">實際使用畫面圖片<a class="alert-link" href="https://i.imgur.com/mU8puRH.png" target="_blank">(連結)</a></div>
+    <form>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">我沒有的</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" v-model="iNeed" placeholder="請輸入物品名稱並以 Enter 鍵隔開"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">我重複的 </label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" v-model="iDontNeed" placeholder="請輸入物品名稱並以 Enter 鍵隔開"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">別人沒有的 </label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" v-model="heNeed" placeholder="請輸入物品名稱並以 Enter 鍵隔開"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">別人重複的 </label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" v-model="heDontNeed" placeholder="請輸入物品名稱並以 Enter 鍵隔開"></textarea>
+      </div>
+    </form>
+    <hr/>
+    <div class="alert alert-success" role="alert" :class="{ 'd-none': !isClicked }">複製成功！<span>訊息為{{copiedText}}</span></div>
+    <div class="alert alert-danger" role="alert" :class="{ 'd-none': canChangeOrNot }">目前沒有能互換的</div>
+    <div class="alert alert-warning" role="alert" :class="{ 'd-none': true }">還沒有輸入完資料</div>
+    <p>點擊即可複製以下能傳出的交換訊息<span class="badge badge-light" id="changenum">{{messages.length}}</span></p>
+    <ul class="list-group">
+      <li class="list-group-item messageli" v-for="message in messages" @click="copytext">{{message}}</li>
+    </ul>
+    <footer class="mastfoot mt-auto">
+      <div class="inner">
+        <p>© 2020 <a href="https://www.facebook.com/lloyd3126">Chen Chung Nien </a>| All RIghts Reserved.</p>
+      </div>
+    </footer>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/popper.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/js/bootstrap.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+@charset "UTF-8";
+* {
+  font-family: "微軟正黑體";
+}
+
+.container {
+  padding: 20px;
+}
+.container a {
+  padding: 5px;
+}
+
+#changenum {
+  margin-left: 5px;
+}
+
+.messageli:hover {
+  background-color: #007bff;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+footer .inner {
+  margin-top: 20px;
+}
